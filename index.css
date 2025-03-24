@@ -1,0 +1,100 @@
+body {
+  text-align: center;
+  margin: 0;
+  background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#calculato {
+  max-width: 360px;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  transform: scale(0.8);
+  animation: popUp 0.6s ease-out forwards;
+}
+
+#display {
+  width: 100%;
+  height: 56px;
+  font-size: 20px;
+  text-align: right;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  color: antiquewhite;
+  background-color: #02227aab;
+  border: none;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: fadeIn 0.8s 0.3s ease-in-out forwards;
+}
+
+.operator {
+  background: #ff9800;
+  color: white;
+}
+
+#ac {
+  background: #d32f2f;
+  color: white;
+}
+
+.equal {
+  width: calc(50% - 10px);
+  background: #00c853;
+  color: white;
+}
+
+button {
+  width: calc(25% - 10px);
+  height: 50px;
+  font-size: 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 5px;
+  float: left;
+  background-color: rgb(13, 27, 42);
+  color: #e0e1dd;
+  box-shadow: -1px 1px 30px -5px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  transform: scale(1);
+  animation: buttonEntry 0.6s ease-in-out forwards;
+}
+
+button:not(.operator) {
+  background: #444;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  filter: brightness(1.3);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes buttonEntry {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
